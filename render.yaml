@@ -1,1 +1,19 @@
-
+services:
+  - type: web
+    name: evohome-backend
+    env: docker
+    plan: starter
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: "8080"
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: ADMIN_EMAIL
+        value: office@evohomeimprovements.co.uk
+      - key: ADMIN_PASSWORD
+        value: ChangeMe123!
+      - key: BOLT_DOCX_PATH
+        value: /app/bolt-export.docx
